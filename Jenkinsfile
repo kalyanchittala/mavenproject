@@ -21,7 +21,7 @@ pipeline
         {
             steps
             {
-               deploy adapters: [tomcat9(credentialsId: 'bfb67f1d-2f4e-430c-bb8d-30584116bd00', path: '', url: 'http://172.31.34.102:8080')], contextPath: 'test1', war: '**/*.war'
+               deploy adapters: [tomcat9(credentialsId: 'c2d91048-35c8-441e-a00d-891e6c56c372', path: '', url: 'http://172.31.34.102:8080')], contextPath: 'testapp', war: '**/*.war'
             }
         }
         stage('ContinuousTesting')
@@ -39,7 +39,7 @@ pipeline
         success
         {
             input message: 'Need approval from the DM!', submitter: 'srinivas'
-               deploy adapters: [tomcat9(credentialsId: 'bfb67f1d-2f4e-430c-bb8d-30584116bd00', path: '', url: 'http://172.31.34.102:8080')], contextPath: 'prod1', war: '**/*.war'
+               deploy adapters: [tomcat9(credentialsId: 'c2d91048-35c8-441e-a00d-891e6c56c372', path: '', url: 'http://172.31.34.102:8080')], contextPath: 'testapp', war: '**/*.war'
         }
         failure
         {
